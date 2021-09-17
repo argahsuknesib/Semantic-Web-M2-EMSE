@@ -1,0 +1,35 @@
+
+############INTRODUCTION############
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://example.com/> .
+
+ex:BISEN ex:worksFor ex:emse;  
+        ex:likesToEate "kebab"^^xsd:string;
+        ex:studiedThisWeek "Multi-Agent Systems"^^xsd:string;
+        ex:hasMachine ex:ThinkPad.
+
+ex:BISEN ex:name "KushagraSinghBISEN"^^xsd:string .
+ex:BISEN ex:birthDate "24-02-1999"^^xsd:date .
+ex:emse ex:establishedIn "1816"^^xsd:gYear .
+ex:BISEN ex:studies ex:SemanticWeb .
+ex:BISEN ex:homepage <http://argahsuknesib.github.io/> .
+ex:BISEN ex:homepageIRI "http://argahsuknesib.github.io"^^xsd:anyURI .
+
+ex:SemanticWeb ex:hasPart <http://argahsuknesib.github.io/sem-web-session2021-09-17T13:30:00+02:00> .
+ex:SemanticWeb ex:hasPart ex:sem-web-session2021-09-17T11:30:00Z.
+ex:sem-web-session2021-09-17T11:30:00Z ex:numberOfStudents 33 .
+ex:sem-web-session2021-09-17T11:30:00Z ex:hasSlideShow [ex:hasTitle "SemanticWeb"@en, "Web Semantique"@fr; ex:nbSlides 12;] .
+
+[ex:prop ex:x] ex:something ex:thing .
+#is the same as
+[] ex:something ex:thing;
+        ex:prop ex:x .
+
+###################################
+
+#it is equal to 'X is a Y i.e equal to rdf:type'
+ex:BISEN a ex:Person, ex:Student,ex:M2Student,ex:Indian .
+#is same as
+ex:BISEN rdf:type ex:Person,ex:Student,ex:M2Student,ex:Indian . 
+
