@@ -1,0 +1,32 @@
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix voc: <http://example.com/vocabulary/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sc: <http://purl.org/science/owl/sciencecommons/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+
+ex:elena_sakorafa  a  schema:Person;
+  schema:name
+    "Elena Sakorafa"@en,
+    "Έλενα Σακοράφα"@hl;
+  schema:nationality  dbr:Greece;
+  schema:birthDate  "1983-07-06"^^xsd:date;
+  org:hasMembership  [
+    org:organization  ex:SemWebCorp;
+    org:role  ex:softwareEngineer;
+    schema:startDate  "2021-02-01"^^xsd:date
+  ] .
+
+ex:nikos_sakorafa  a  schema:Person;
+  voc:parentOf  ex:elena_sakorafa;
+  schema:givenName
+    "Nikos"@en,
+    "Νίκος"@hl;
+  org:hasMembership  [
+    org:organization  ex:SemWebCorp;
+    org:role  ex:chiefExecutiveOfficer;
+    schema:startDate  "2012-09-12"^^xsd:date;
+    schema:endDate  "2020-04-04"^^xsd:date    
+  ] .

@@ -1,0 +1,32 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex: <http://www.example.org/> .
+@prefix schema: <http://www.schema.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+ex:KushagraSingh_BISEN a schema:Person ;
+    schema:name
+    "Kushagra Singh BISEN"@english,
+    "कुशाग्र सिंह बिसेन"@hindi,
+    "کوشاگرا سینگ بیسن"@persian;
+    schema:nationality dbr:Indian;
+    schema:birthDate  "1999-02-24"^^xsd:date;
+    schema:birthPlace place:Jaunpur;
+    org:hasBachelorEducation [
+        org:University ex:SRMInstitute;
+        org:Degree ex:BachelorOfTechnology;
+        schema:startDate "2016-07-01"^^xsd:date;
+        schema:endDate "2020-07-01"^^xsd:date;
+    ];
+    org:hasMasterEducation [
+        org:University ex:UniversiteDeLyon;
+        org:Degree ex:MasterOfScience;
+        schema:startDate "2020-09-28"^^xsd:date;
+        schema:endDate "2022-08-28"^^xsd:date;
+    ];
+
+    
+
+    
+    .
+
+

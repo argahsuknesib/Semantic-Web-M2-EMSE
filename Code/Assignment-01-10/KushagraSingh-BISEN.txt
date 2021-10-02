@@ -1,0 +1,84 @@
+Kushagra Singh BISEN
+
+Assignment on Linked Data: interacting with and publishing Web data Dated 01/01/2021
+
+Section 1 : "Use cURL on Linked Data" -->
+
+Question 1. 
+
+--> `curl -I https://dbpedia.org/page/Tim_Berners-Lee` provides a 303 (see other, could be redirecting to another page) and a location of https://dbpedia.org/resource/Tim_Berners-Lee 
+--> `curl -I https://dbpedia.org/resource/Tim_Berners-Lee' provides a 303 (see other, as well) and a location of https://dbpedia.org/page/Tim_Berners-Lee
+--> `curl -I https://dbpedia.org/page/Tim_Berners-Lee' finally provides a 200 OK and we finally find the final link to the location.
+
+The final location is,
+
+ <http://creativecommons.org/licenses/by-sa/3.0/>; rel="license", <http://dbpedia.org/data/Tim_Berners-Lee.rdf>; rel="alternate"; type="application/rdf+xml"; title="Structured Descriptor Document (RDF/XML format)",
+<http://dbpedia.org/data/Tim_Berners-Lee.n3>; rel="alternate"; type="text/n3"; title="Structured Descriptor Document (N3 format)", <http://dbpedia.org/data/Tim_Berners-Lee.ttl>; rel="alternate"; type="text/turtle"; 
+title="Structured Descriptor Document (Turtle format)", <http://dbpedia.org/data/Tim_Berners-Lee.json>; rel="alternate"; type="application/json"; title="Structured Descriptor Document (RDF/JSON format)", 
+<http://dbpedia.org/data/Tim_Berners-Lee.atom>; rel="alternate"; type="application/atom+xml"; title="OData (Atom+Feed format)",
+<http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=text%2Fcsv>; rel="alternate"; type="text/csv"; title="Structured Descriptor Document (CSV format)",
+ <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=text%2Fcxml>; rel="alternate"; type="text/cxml"; title="Structured Descriptor Document (CXML format)",
+<http://dbpedia.org/data/Tim_Berners-Lee.ntriples>; rel="alternate"; type="text/plain"; title="Structured Descriptor Document (N-Triples format)",
+ <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=application%2Fmicrodata%2Bjson>; rel="alternate"; 
+type="application/microdata+json"; title="Structured Descriptor Document (Microdata/JSON format)", 
+<http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=text%2Fhtml>; rel="alternate"; type="text/html"; 
+title="Structured Descriptor Document (Microdata/HTML format)", <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=application%2Fld%2Bjson>;
+rel="alternate"; type="application/ld+json"; title="Structured Descriptor Document (JSON-LD format)", <http://dbpedia.org/resource/Tim_Berners-Lee>; rel="http://xmlns.com/foaf/0.1/primaryTopic", <http://dbpedia.org/resource/Tim_Berners-Lee>;
+ rev="describedby", <http://dbpedia.mementodepot.org/timegate/http://dbpedia.org/page/Tim_Berners-Lee>; rel="timegate"
+
+Question 2.
+
+The format is text/html.
+
+The final representation is,
+
+HTTP/2 200 
+date: Fri, 01 Oct 2021 13:21:49 GMT
+content-type: text/html; charset=UTF-8
+content-length: 274888
+vary: Accept-Encoding
+server: Virtuoso/08.03.3322 (Linux) x86_64-generic-linux-glibc25  VDB
+expires: Fri, 08 Oct 2021 13:21:49 GMT
+link: <http://creativecommons.org/licenses/by-sa/3.0/>; rel="license", <http://dbpedia.org/data/Tim_Berners-Lee.rdf>; rel="alternate"; type="application/rdf+xml"; title="Structured Descriptor Document (RDF/XML format)", <http://dbpedia.org/data/Tim_Berners-Lee.n3>; rel="alternate"; type="text/n3"; title="Structured Descriptor Document (N3 format)", <http://dbpedia.org/data/Tim_Berners-Lee.ttl>; rel="alternate"; type="text/turtle"; title="Structured Descriptor Document (Turtle format)", <http://dbpedia.org/data/Tim_Berners-Lee.json>; rel="alternate"; type="application/json"; title="Structured Descriptor Document (RDF/JSON format)", <http://dbpedia.org/data/Tim_Berners-Lee.atom>; rel="alternate"; type="application/atom+xml"; title="OData (Atom+Feed format)", <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=text%2Fcsv>; rel="alternate"; type="text/csv"; title="Structured Descriptor Document (CSV format)", <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=text%2Fcxml>; rel="alternate"; type="text/cxml"; title="Structured Descriptor Document (CXML format)", <http://dbpedia.org/data/Tim_Berners-Lee.ntriples>; rel="alternate"; type="text/plain"; title="Structured Descriptor Document (N-Triples format)", <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=application%2Fmicrodata%2Bjson>; rel="alternate"; type="application/microdata+json"; title="Structured Descriptor Document (Microdata/JSON format)", <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=text%2Fhtml>; rel="alternate"; type="text/html"; title="Structured Descriptor Document (Microdata/HTML format)", <http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=DESCRIBE%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FTim_Berners-Lee%3E&format=application%2Fld%2Bjson>; rel="alternate"; type="application/ld+json"; title="Structured Descriptor Document (JSON-LD format)", <http://dbpedia.org/resource/Tim_Berners-Lee>; rel="http://xmlns.com/foaf/0.1/primaryTopic", <http://dbpedia.org/resource/Tim_Berners-Lee>; rev="describedby", <http://dbpedia.mementodepot.org/timegate/http://dbpedia.org/page/Tim_Berners-Lee>; rel="timegate"
+cache-control: max-age=604800
+access-control-allow-credentials: true
+access-control-allow-methods: HEAD, GET, POST, OPTIONS
+access-control-allow-headers: Depth,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Accept-Encoding
+accept-ranges: bytes
+
+The response code here is 200, which denotes OK status and we have reached the final destination. 
+
+Question 3.
+
+For this exercise, we add an extra header i.e "Accept: text/turtle" to our cURL commands.
+
+--> `curl -I -H "Accept: text/turtle" http://dbpedia.org/resource/Tim_Berners-Lee` which shows a 303 and redirects to a a different website.
+--> We will now curl that website, `curl -I -H "Accept: text/turtle" https://dbpedia.org/resource/Tim_Berners-Lee` which also gives a 303 and redirects to a ttl file.
+--> `curl -I -H "Accept: text/turtle" https://dbpedia.org/data/Tim_Berners-Lee.ttl` will provide a 200 OK response and here the content type is "text/turtle"
+
+The final representation is,
+
+HTTP/2 200 
+date: Fri, 01 Oct 2021 13:40:17 GMT
+content-type: text/turtle; charset=UTF-8
+content-length: 120221
+server: Virtuoso/08.03.3322 (Linux) x86_64-generic-linux-glibc25  VDB
+expires: Fri, 08 Oct 2021 13:40:17 GMT
+link: <http://creativecommons.org/licenses/by-sa/3.0/>; rel="license", <http://dbpedia.org/data/Tim_Berners-Lee.xml>; rel="alternate"; type="application/rdf+xml"; title="Structured Descriptor Document (RDF/XML format)", <http://dbpedia.org/data/Tim_Berners-Lee.n3>; rel="alternate"; type="text/n3"; title="Structured Descriptor Document (N3/Turtle format)", <http://dbpedia.org/data/Tim_Berners-Lee.json>; rel="alternate"; type="application/json"; title="Structured Descriptor Document (RDF/JSON format)", <http://dbpedia.org/data/Tim_Berners-Lee.atom>; rel="alternate"; type="application/atom+xml"; title="OData (Atom+Feed format)", <http://dbpedia.org/data/Tim_Berners-Lee.jsod>; rel="alternate"; type="application/odata+json"; title="OData (JSON format)", <http://dbpedia.org/page/Tim_Berners-Lee>; rel="alternate"; type="text/html"; title="XHTML+RDFa", <http://dbpedia.org/resource/Tim_Berners-Lee>; rel="http://xmlns.com/foaf/0.1/primaryTopic", <http://dbpedia.org/resource/Tim_Berners-Lee>; rev="describedby", <http://dbpedia.mementodepot.org/timegate/http://dbpedia.org/data/Tim_Berners-Lee.ttl>; rel="timegate"
+x-sparql-default-graph: http://dbpedia.org
+content-disposition: filename=sparql_2021-10-01_10-27-18Z.ttl
+cache-control: max-age=604800
+access-control-allow-credentials: true
+access-control-allow-methods: HEAD, GET, POST, OPTIONS
+access-control-allow-headers: Depth,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Accept-Encoding
+accept-ranges: bytes
+
+Question 4.
+
+--> `curl -L -H "Accept: application/rdf+xml"  https://dbpedia.org/resource/Tim_Berners-Lee.xml`
+--> `curl -L -H "Accept: application/rdf+xml"  https://dbpedia.org/resource/Tim_Berners-Lee`
+to achieve the RDF/XML file.
+
+
+
+Section 2 : "Follow the Links" -->
