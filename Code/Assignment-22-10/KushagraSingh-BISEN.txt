@@ -1,31 +1,374 @@
-Question 1 :
+<--------------------------------------Part 1:------------------------------------> 
 
-#Query to Display all weapons
-SELECT ?item ?itemLabel 
-WHERE 
+Question 1 -->
+
+The JSON-LD code described in the website is,
+
 {
-  ?item wdt:P31 wd:Q728. # Must be of a cat
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } # Helps get the label in your language, if not, then en language
+ "@context": "http://schema.org",
+ "@type": "Organization",
+ "@id": "https://www.discogs.com/label/41291-Semantic",
+ "name": "Semantic",
+ "image": "https://img.discogs.com/mppPGlkRSJBQ7VbOokpY9G7kC4g=/fit-in/249x77/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/L-41291-1578737977-3558.png.jpg",
+ "description": "SEMANTIC was a label &amp; distribution company, based in France (Nancy), from 1991 to 1998. SEMANTIC was the distribution company for France of international labels such as Domino, Big Cat, KK records, Grey Aera Of Mute, Sub Pop (vinyls only), Amphetamine Reptile, Hyperium, Recrec, Danse Macabre, WSFA, Rough Trade Germany &amp; many more. Originall co-founded by Philippe Saintlos (Odessa &amp; UBAHN), G\u00e9rard Nguyen (Les Disques du Soleil et de l'Acier), Richard Franoux (Permis de Construire) &amp; Dominique R\u00e9p\u00e9caud (33REVpermi). . ",
+ "Offers": {
+  "@type": "AggregateOffer",
+  "availability": "http://schema.org/InStock",
+  "offerCount": 1336
+ }
 }
 
-Question 2:
+The entity described is an Organization (noted from "@type") with the name Semantic. This particular entity is further described
+using the "description" attribute of the mentioned JSON-LD. 
 
-#Query to Display buildings taller than 300m
-SELECT ?item ?itemLabel ?elev
+Question 2 -->
+
+The JSON-LD described is,
+
+"@context": "http://schema.org/",
+    "@type": "Product",
+    "name": "AMD Ryzen 3 1200 AF Wraith Stealth Edition (3.1 GHz / 3.4 GHz)",
+        "image": "https://media.ldlc.com/r1600/ld/products/00/05/66/87/LD0005668738_1.jpg",
+        "description": "The AMD Ryzen 3 1200 AF is AMD&#039;s affordable quad-core processor: 3.1 GHz 3.4 GHz, 8MB L3 cache and only 65W TDP! It will allow you to equip your machine with a powerful Quad-Core processor for an incredible performance/price ratio.",
+    "mpn": "YD1200BBAFBOX",
+    "sku": "AR202003200050",
+    "brand": {
+        "@type": "Thing",
+        "name": "AMD"
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "10",
+        "reviewCount": "6",
+        "bestRating": "10",
+        "worstRating": "0"
+    },
+    "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "availability": "http://schema.org/OutOfStock",
+        "itemCondition": "http://schema.org/NewCondition",
+        "price": "89.95",
+        "url": "https://www.ldlc.com/en/product/PB00337308.html"
+    }
+
+Yes we can decide the availability of the product by
+looking at the JSON-LD of the page source.By viewing the attribute "availability" we can find
+it to be "http://schema.org/OutOfStock" and if it is 
+back in stock the availability attribute will change to "https://schema.org/InStock"
+
+Question 3 -->
+
+The JSON-LD of the page source is,
+
+{"@context":"http:\/\/schema.org","@type":"Recipe","image":"https:\/\/img.jamieoliver.com\/jamieoliver\/recipe-database\/105860262.jpg?tr=w-450","name":"Simple chocolate tart","recipeCategory":"Desserts","description":"This chocolate tart is great for those chocofreaks who turn up out of the blue, as it is dead quick to make. I think this particular tart cries out for a slightly thicker pastry shell. The better the chocolate you can buy, the tastier it will be.","recipeYield":"16","recipeIngredient":["300 ml double cream ","2 level tablespoons caster sugar ","400 g quality dark chocolate (70%)","90 g unsalted butter at room temperature","100 ml milk ","1  <a href=\"https:\/\/www.jamieoliver.com\/recipes\/egg-recipes\/shortcrust-sweet-pastry\/\">tart shell<\/a> baked blind","  quality cocoa powder for dusting"],"recipeInstructions":"<ol class=\"recipeSteps\"><li>Place the double cream, sugar and a tiny pinch of sea salt in a pan and bring to the boil. <\/li><li>Break up the chocolate. <\/li><li>As soon as the mixture has boiled, remove from the heat and add the butter and chocolate. Stir until it has completely melted. Allow the mixture to cool slightly, stirring in the cold milk until smooth and shiny. <\/li><li>Sometimes this mixture looks like it has split. Allow to cool down a bit more and whisk in a little extra cold milk until smooth.<\/li><li>Scrape all the mixture into the cooked and cooled <a href=\"https:\/\/www.jamieoliver.com\/recipes\/egg-recipes\/shortcrust-sweet-pastry\/\">pastry shell<\/a> with a spatula. <\/li><li>Shake the tart to even it out and allow to cool for around 1 to 2 hours until it is at room temperature. Dust with the cocoa powder. <\/li><li>Ultimately the pastry should be short and crisp and the filling should be smooth and should cut like butter.<\/li><\/ol>","keywords":"sweets and desserts, chocolate, tart, pastry, the naked chef, chocolate tart, Chocolate, Puddings &amp; desserts, baking and desserts, dessert, desserts","author":"Jamie Oliver","nutrition":{"calories":"436 calories","fatContent":"32.9 g fat","saturatedFatContent":"20.0 g saturated fat","proteinContent":"4.8 g protein","carbohydrateContent":"30.2 g carbohydrate","sugarContent":"16.4 g sugar","sodiumContent":"0.1 g salt","fiberContent":"3.6 g fibre","@type":"NutritionInformation"},"datePublished":"2019-03-29"}
+
+The type of entity described here is a recipe, with the name 'Simple Chocolate Tart' by the author Jamie Oliver.
+
+Converting the data to turtle using a website easyrdf, 
+
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[]
+  a schema:Recipe ;
+  schema:author "Jamie Oliver"^^xsd:string ;
+  schema:datePublished "2019-03-29"^^schema:Date ;
+  schema:description "This chocolate tart is great for those chocofreaks who turn up out of the blue, as it is dead quick to make. I think this particular tart cries out for a slightly thicker pastry shell. The better the chocolate you can buy, the tastier it will be."^^xsd:string ;
+  schema:image <https://img.jamieoliver.com/jamieoliver/recipe-database/105860262.jpg?tr=w-450> ;
+  schema:keywords "sweets and desserts, chocolate, tart, pastry, the naked chef, chocolate tart, Chocolate, Puddings &amp; desserts, baking and desserts, dessert, desserts"^^xsd:string ;
+  schema:name "Simple chocolate tart"^^xsd:string ;
+  schema:nutrition [
+    a schema:NutritionInformation ;
+    schema:calories "436 calories"^^xsd:string ;
+    schema:carbohydrateContent "30.2 g carbohydrate"^^xsd:string ;
+    schema:fatContent "32.9 g fat"^^xsd:string ;
+    schema:fiberContent "3.6 g fibre"^^xsd:string ;
+    schema:proteinContent "4.8 g protein"^^xsd:string ;
+    schema:saturatedFatContent "20.0 g saturated fat"^^xsd:string ;
+    schema:sodiumContent "0.1 g salt"^^xsd:string ;
+    schema:sugarContent "16.4 g sugar"^^xsd:string
+  ] ;
+  schema:recipeCategory "Desserts"^^xsd:string ;
+  schema:recipeIngredient "300 ml double cream "^^xsd:string, "2 level tablespoons caster sugar "^^xsd:string, "400 g quality dark chocolate (70%)"^^xsd:string, "90 g unsalted butter at room temperature"^^xsd:string, "100 ml milk "^^xsd:string, "1  <a href=\"https://www.jamieoliver.com/recipes/egg-recipes/shortcrust-sweet-pastry/\">tart shell</a> baked blind"^^xsd:string, "  quality cocoa powder for dusting"^^xsd:string ;
+  schema:recipeInstructions "<ol class=\"recipeSteps\"><li>Place the double cream, sugar and a tiny pinch of sea salt in a pan and bring to the boil. </li><li>Break up the chocolate. </li><li>As soon as the mixture has boiled, remove from the heat and add the butter and chocolate. Stir until it has completely melted. Allow the mixture to cool slightly, stirring in the cold milk until smooth and shiny. </li><li>Sometimes this mixture looks like it has split. Allow to cool down a bit more and whisk in a little extra cold milk until smooth.</li><li>Scrape all the mixture into the cooked and cooled <a href=\"https://www.jamieoliver.com/recipes/egg-recipes/shortcrust-sweet-pastry/\">pastry shell</a> with a spatula. </li><li>Shake the tart to even it out and allow to cool for around 1 to 2 hours until it is at room temperature. Dust with the cocoa powder. </li><li>Ultimately the pastry should be short and crisp and the filling should be smooth and should cut like butter.</li></ol>"^^xsd:string ;
+  schema:recipeYield "16"^^xsd:string .
+
+Question 4 -->
+
+There 792 classes in Schema.org usually described as 'types' in Schema.org heirarchy.
+
+
+<--------------------------------------Part 2:------------------------------------> 
+
+Question 1 -->
+My favourite movie "Batman V Superman : Dawn of Justice".
+
+After adding the Schema.org context to the JSON response from Omdb the JSON-LD is,
+
 {
-  ?item p:P2044/psn:P2044/wikibase:quantityAmount ?elev ;  #height
-        wdt:P17 wd:Q1 ; #Q1 for totality of the universe and P17 for the country.
-  FILTER(?elev > 300)
+  "@context": {
+  "sdo" : "https://schema.org",
+    "ex": "https://example.org",
+  "title" : "sdo/title",
+    "year":"http://lsdis.cs.uga.edu/projects/semdis/opus#year",
+    "rated": "ex/rated",
+    "released" : "ex/released",
+    "runtime" : "sdo/runtime",
+    "genre" : "sdo/genre"
+},
 
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
-}
 
-Question 3: 
+"title":"Batman v Superman: Dawn of Justice","year":"2016","rated":"PG-13","released":"25 Mar 2016","runtime":"152 min","genre":"Action, Adventure, Sci-Fi","Director":"Zack Snyder","Writer":"Chris Terrio, David S. Goyer, Bob Kane","Actors":"Ben Affleck, Henry Cavill, Amy Adams","Plot":"The general public is concerned over having Superman on their planet and letting the \"Dark Knight\" - Batman - pursue the streets of Gotham. While this is happening, a power-phobic Batman tries to attack Superman. Meanwhile, Superman tries to settle on a decision, and Lex Luthor, the criminal mastermind and millionaire, tries to use his own advantages to fight the \"Man of Steel\".","Language":"English","Country":"United States","Awards":"14 wins & 33 nominations","Poster":"https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg","Ratings":[{"Source":"Internet Movie Database","Value":"6.4/10"},{"Source":"Rotten Tomatoes","Value":"29%"},{"Source":"Metacritic","Value":"44/100"}],"Metascore":"44","imdbRating":"6.4","imdbVotes":"665,992","imdbID":"tt2975590","Type":"movie","DVD":"19 Jul 2016","BoxOffice":"$330,360,194","Production":"N/A","Website":"N/A","Response":"True"}
 
-#Query for Average height of Mountains
-SELECT ?item ?itemLabel (AVG(?elev) AS ?height)
+//Comment : I could not add all the contexts due to time constraints. JSON does not support comments so I write it like this.
+
+The RDF graph is,
+
+[
+  {
+    "actors": [
+      {
+        "@value": "Ben Affleck, Henry Cavill, Amy Adams"
+      }
+    ],
+    "awards": [
+      {
+        "@value": "14 wins & 33 nominations"
+      }
+    ],
+    "boxOffice": [
+      {
+        "@value": "$330,360,194"
+      }
+    ],
+    "http://schema.org/Country": [
+      {
+        "@value": "United States"
+      }
+    ],
+    "http://schema.org/DVD": [
+      {
+        "@value": "19 Jul 2016"
+      }
+    ],
+    "http://schema.org/Director": [
+      {
+        "@value": "Zack Snyder"
+      }
+    ],
+    "genre": [
+      {
+        "@value": "Action, Adventure, Sci-Fi"
+      }
+    ],
+    "http://schema.org/Language": [
+      {
+        "@value": "English"
+      }
+    ],
+    "http://schema.org/Metascore": [
+      {
+        "@value": "44"
+      }
+    ],
+    "http://schema.org/Plot": [
+      {
+        "@value": "The general public is concerned over having Superman on their planet and letting the \"Dark Knight\" - Batman - pursue the streets of Gotham. While this is happening, a power-phobic Batman tries to attack Superman. Meanwhile, Superman tries to settle on a decision, and Lex Luthor, the criminal mastermind and millionaire, tries to use his own advantages to fight the \"Man of Steel\"."
+      }
+    ],
+    "http://schema.org/Poster": [
+      {
+        "@value": "https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+      }
+    ],
+    "http://schema.org/Production": [
+      {
+        "@value": "N/A"
+      }
+    ],
+    "http://schema.org/Rated": [
+      {
+        "@value": "PG-13"
+      }
+    ],
+    "http://schema.org/Ratings": [
+      {
+        "http://schema.org/Source": [
+          {
+            "@value": "Internet Movie Database"
+          }
+        ],
+        "http://schema.org/Value": [
+          {
+            "@value": "6.4/10"
+          }
+        ]
+      },
+      {
+        "http://schema.org/Source": [
+          {
+            "@value": "Rotten Tomatoes"
+          }
+        ],
+        "http://schema.org/Value": [
+          {
+            "@value": "29%"
+          }
+        ]
+      },
+      {
+        "http://schema.org/Source": [
+          {
+            "@value": "Metacritic"
+          }
+        ],
+        "http://schema.org/Value": [
+          {
+            "@value": "44/100"
+          }
+        ]
+      }
+    ],
+    "http://schema.org/Released": [
+      {
+        "@value": "25 Mar 2016"
+      }
+    ],
+    "http://schema.org/Response": [
+      {
+        "@value": "True"
+      }
+    ],
+    "http://schema.org/Runtime": [
+      {
+        "@value": "152 min"
+      }
+    ],
+    "http://schema.org/Title": [
+      {
+        "@value": "Batman v Superman: Dawn of Justice"
+      }
+    ],
+    "http://schema.org/Type": [
+      {
+        "@value": "movie"
+      }
+    ],
+    "http://schema.org/Website": [
+      {
+        "@value": "N/A"
+      }
+    ],
+    "http://schema.org/Writer": [
+      {
+        "@value": "Chris Terrio, David S. Goyer, Bob Kane"
+      }
+    ],
+    "http://schema.org/Year": [
+      {
+        "@value": "2016"
+      }
+    ],
+    "http://schema.org/imdbID": [
+      {
+        "@value": "tt2975590"
+      }
+    ],
+    "http://schema.org/imdbRating": [
+      {
+        "@value": "6.4"
+      }
+    ],
+    "http://schema.org/imdbVotes": [
+      {
+        "@value": "665,992"
+      }
+    ]
+  }
+]
+
+Question 2 -->
+
+In the RDF above, the link to be made a real world IRI and not string is to be done by adding an "@id" : "https://m.media-amazon.com/images/M/MV5BYThjYzcyYzItNTVjNy00NDk0LTgwMWQtYjMwNmNlNWJhMzMyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"
+to the link for the image to make it an IRI.
+
+<--------------------------------------Part 3:------------------------------------> 
+
+Question 1 -->
+
+The JSON-LD for the Turtle wrote in the previous exercise is,
+
+
 {
-  ?item p:P2044/psn:P2044/wikibase:quantityAmount ?height;  #height
-        wdt:P17 wd:Q1 ; #Q1 for totality of the universe and P17 for the country.
-  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+  "@graph": [
+    {
+      "@id": "_:b0",
+      "http://www.schema.org/endDate": {
+        "@type": "https://random.imdate",
+        "@value": "2020-07-01"
+      },
+      "http://www.schema.org/startDate": {
+        "@type": "https://random.imdate",
+        "@value": "2016-07-01"
+      },
+      "http://www.w3.org/ns/org#Degree": {
+        "@id": "http://www.example.org/BachelorOfTechnology"
+      },
+      "http://www.w3.org/ns/org#University": {
+        "@id": "http://www.example.org/SRMInstitute"
+      }
+    },
+    {
+      "@id": "_:b1",
+      "http://www.schema.org/endDate": {
+        "@type": "https://random.imdate",
+        "@value": "2022-08-28"
+      },
+      "http://www.schema.org/startDate": {
+        "@type": "https://random.imdate",
+        "@value": "2020-09-28"
+      },
+      "http://www.w3.org/ns/org#Degree": {
+        "@id": "http://www.example.org/MasterOfScience"
+      },
+      "http://www.w3.org/ns/org#University": {
+        "@id": "http://www.example.org/UniversiteDeLyon"
+      }
+    },
+    {
+      "@id": "http://www.example.org/KushagraSingh_BISEN",
+      "@type": "http://www.schema.org/Person",
+      "http://www.schema.org/birthDate": {
+        "@type": "https://random.imdate",
+        "@value": "1999-02-24"
+      },
+      "http://www.schema.org/birthPlace": {
+        "@id": "https://random.rewJaunpur"
+      },
+      "http://www.schema.org/name": [
+        {
+          "@language": "english",
+          "@value": "Kushagra Singh BISEN"
+        },
+        {
+          "@language": "hindi",
+          "@value": "कुशाग्र सिंह बिसेन"
+        },
+        {
+          "@language": "persian",
+          "@value": "کوشاگرا سینگ بیسن"
+        }
+      ],
+      "http://www.schema.org/nationality": {
+        "@id": "https://random.reIndian"
+      },
+      "http://www.w3.org/ns/org#hasBachelorEducation": {
+        "@id": "_:b0"
+      },
+      "http://www.w3.org/ns/org#hasMasterEducation": {
+        "@id": "_:b1"
+      }
+    }
+  ]
 }

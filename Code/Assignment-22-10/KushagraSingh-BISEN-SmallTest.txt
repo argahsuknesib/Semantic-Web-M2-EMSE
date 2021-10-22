@@ -1,0 +1,31 @@
+Question 1 :
+
+#Query to Display all weapons
+SELECT ?item ?itemLabel 
+WHERE 
+{
+  ?item wdt:P31 wd:Q728. # Must be for Weapons
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". } # Helps get the label in your language, if not, then en language
+}
+
+Question 2:
+
+#Query to Display buildings taller than 300m
+SELECT ?item ?itemLabel ?elev
+{
+  ?item p:P2044/psn:P2044/wikibase:quantityAmount ?elev ;  #height
+        wdt:P17 wd:Q1 ; #Q1 for totality of the universe and P17 for the country.
+  FILTER(?elev > 300)
+
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
+
+Question 3: 
+
+#Query for Average height of Mountains
+SELECT ?item ?itemLabel (AVG(?elev) AS ?height)
+{
+  ?item p:P2044/psn:P2044/wikibase:quantityAmount ?height;  #height
+        wdt:P17 wd:Q1 ; #Q1 for totality of the universe and P17 for the country.
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+}
