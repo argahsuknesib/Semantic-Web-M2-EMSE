@@ -1,0 +1,37 @@
+<--- Part 1 --->
+
+Solution 1 --> 
+1. instance of (P31)that class of which this subject is a particular example and member
+2. house cat (Q146) domesticated feline
+
+Solution 2 --> 
+The Q number of the cow is Q11748378 signifying a female cattle. 
+
+Solution 3 --> 
+On execution, there are 14 results to the specified Q number.
+
+Solution 4 --> 
+Everything except SERVICE is also a part of SQL constructs i.e SELECT, COUNT AS, WHERE, GROUP BY, ORDER BY DESC, LIMIT.
+
+<--- Part 2 --->
+
+Solution 1 --> 
+The query ` SELECT * WHERE {?x rdfs:label "Saint-Étienne"@fr .}  ` provided 6 results. All of the results were links to wikidata pages. Three results were situated
+in France in different capacities, commune (Q42716), former commune (Q3463615) and a neighbourhood in Tolouse (Q3463618). Thus, the result (Q42716) 
+points to the commune in Loire, France which is our city. 
+
+The IRI identifying the city is https://www.wikidata.org/wiki/Q42716
+
+Other results are : 
+1. human settlement in Petit-Saguenay, Quebec, Canada with the Q number Q28535177.
+2. The Q number Q343395 shows a wikipedia disambigution page. 
+3. entry in Dictionnaire du patrimoine rennais with the Q number Q30025490.
+
+Solution 2 --> 
+
+
+
+
+
+NOTE : I am struggling to write the syntax for SPARQL and as each endpoint i.e dbpedia, wikidata have different versions,
+I need some more time to get adjusted to the concept. I will attempt the questions in weekend.

@@ -1,0 +1,31 @@
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix voc: <http://example.com/vocabulary/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix sc: <http://purl.org/science/owl/sciencecommons/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+
+ex:ken_jenning a schema:Person;
+    schema:name
+    "Ken Jenning"@en;
+    schema:pronouns
+    "He";
+    edu:GradstudiedFrom [
+        univ:ColumbiaUniversity degree:M.Sc;
+        schema:gradDate "1989"^^xsd:date; 
+    ];
+    edu:PhDstudiedFrom [
+        univ:MIT degree:PhD;
+        schema:gradDate "1994"^^xsd:date; 
+    ].
+
+ex:friend a schema:Person;
+    voc:friendOf ex:ken_jenning;
+    org:worksAt[
+        org:organization ex:Google;
+    ] .
+    
+
+
