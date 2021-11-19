@@ -1,0 +1,23 @@
+Regarding the current contracting phase (as described in question 3)
+
+<-- the agent’s autonomy of the giacomo agent and of the company agents -->
+The pros are : 
+1. The giacomo agent's logic to execute efficient bidding and execution are the best of the
+three stages as it can now both assign/chose specific tasks but also has the reputation
+for the different companies. It can now choose the one with the best reputation and 
+invite them for bidding for efficient execution.
+
+The cons are :
+1. Reputation is not calculated by running the simulation multiple times.
+Instead, to simplify it is provided as a belief.
+
+<-- the openness of the system, considering that agents supporting the companies may
+ be developed by any company and join the "market place" to participate to the auctions -->
+
+The pros are :
+1. Any new company joining will need to have a reputation, which will help the 
+giacomo agent to decide which company it should invite to bid for a task.
+
+The cons are :
+1. Interaction between different companies while execution, if implemented would be
+making the process more efficient.

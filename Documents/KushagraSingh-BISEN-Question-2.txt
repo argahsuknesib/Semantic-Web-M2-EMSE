@@ -1,0 +1,31 @@
+Regarding the current contracting phase (as described in question 2)
+
+<-- the agent’s autonomy of the giacomo agent and of the company agents -->
+The pros are : 
+1. Giacomo agent has more autonomy and as it is the owner, it can now decide which
+particular company should work for a particular task in house building.
+2. Companies are not participating in the bidding of the tasks they are not able to do
+which makes the process more efficient.
+
+The cons are :
+1. As the present implementation doesn't provide record of the trust and reputation
+as well as the average time taken for a particular company to build the house 
+it is not implementation.
+
+2. The coordination in execution can be affected by efficiency of each company.
+For example, it is useless if the company responsible to make the base takes a lot of time
+even if it is cheap (as preferred by the artifact) because it will hault other work such
+as the agent responsible to build the roof.
+
+<-- the openness of the system, considering that agents supporting the companies may
+ be developed by any company and join the "market place" to participate to the auctions -->
+
+The pros are :
+1. Giacomo agent can now choose the new company if it enters based upon the work it can do.
+2. Giacomo agent has more options to chose from the presented profile.
+3. Only the companies with an invitation can participate, increasing the efficiency of 
+computation. We can add more companies to the system and can keep them on 'no communication'
+based interaction if they don't do the work giacomo agent wants, and can be utilized later.
+The cons are :
+1. As the system doesn't consider the trust/reputation/average time taken to build for any company,
+introducing new companies to the system can decrease efficiency.

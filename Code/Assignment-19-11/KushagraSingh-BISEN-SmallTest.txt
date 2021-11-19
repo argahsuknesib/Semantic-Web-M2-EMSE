@@ -1,0 +1,60 @@
+Question 1 -->
+
+The JSON-LD code described with an example context (let's use Schema.org)
+is,
+
+{
+
+  "@context": {
+      "ref" : "https://www.wikidata.org/wiki/Q13912",
+      "publisher" : "https://schema.org/publisher",
+      "publicationDate": "https://schema.org/Date",
+      "title": "https://schema.org/ScholarlyArticle",
+      "usefulLinks" : "https://schema.org/url"
+  },
+
+  "ref": "Q13912",
+
+  "publisher": "Harper & Raw",
+
+  "publicationDate": "1963-11-13",
+
+  "title": "Where the Wild Things Are",
+
+  "usefulLinks": [ "https://en.wikipedia.org/wiki/Where_the_Wild_Things_Are" ]
+
+}
+
+
+Question 2 -->
+
+I think for it to be semantically equal to this,
+I will have to use wikidata, purl and xmlns than just 
+using Schema like I did before,
+
+I wil write the JSON-LD code again with context,
+
+{
+  
+  "@context": {
+      "ref" : "https://www.wikidata.org/wiki/Q13912",
+      "publisher": "http://purl.org/dc/terms/publisher",
+      "issued": "http://purl.org/dc/terms/issued",
+      "title" : "http://purl.org/dc/terms/title",
+      "usefulLinks" : "http://xmlns.com/foaf/0.1/isPrimarySubjectOf"
+
+  },
+
+
+
+  "ref": "Q13912",
+
+  "publisher": "Harper & Raw",
+
+  "publicationDate": "1963-11-13",
+
+  "title": "Where the Wild Things Are",
+
+  "usefulLinks": [ "https://en.wikipedia.org/wiki/Where_the_Wild_Things_Are" ]
+
+}

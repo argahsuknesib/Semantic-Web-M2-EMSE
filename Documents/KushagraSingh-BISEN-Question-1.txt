@@ -1,0 +1,40 @@
+Regarding the current version contracting phase (as described in Question 1),
+
+<-- the agent’s autonomy of the giacomo agent and of the companyXi agents -->
+The pros are : -->
+1. Companies can themselves decide after bidding to allocate a particular task to which company.
+2. The giacomo agent will get the cheapest price for execution of the work as decided
+3. The giacomo agent is the one responsibe to provide the command !!go to execute the building 
+after the bidding done by the companies.
+
+The cons are : -->
+1. As the house is of the 'owner' i.e giacomo agent, it should have the final say on
+their house to be built, and not the different contactors. It is essential to provide
+more autonomy to the giacomo agent.
+
+2. As the present implementation doesn't provide record of the trust and reputation
+as well as the average time taken for a particular company to build the house 
+it is not implementation.
+
+3. The coordination in execution can be affected by efficiency of each company.
+For example, it is useless if the company responsible to make the base takes a lot of time
+even if it is cheap (as preferred by the artifact) because it will hault other work such
+as the agent responsible to build the roof.
+
+<-- the openness of the system, considering that agents supporting the companies may
+ be developed by any company and join the "market place" to participate to the auctions -->
+
+The pros are : -->
+1. A new company agent can be created and used to participate in the contracting process.
+
+2. The new company is able to create as many instance as it wants.
+
+The cons are : -->
+1. In this implementation, all the company agents can participate in the bidding, even if they can't
+build the particular task making the process less efficient. 
+
+2. The giacomo agent should be given more autonomy to decide which new company can be choosen to 
+do the task. A presentation of companies to giacomo agent will be beneficial.
+
+3. As the system doesn't consider the trust/reputation/average time taken to build for any company,
+introducing new companies to the system can decrease efficiency.
