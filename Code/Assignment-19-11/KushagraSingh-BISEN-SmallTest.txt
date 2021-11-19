@@ -46,7 +46,6 @@ I wil write the JSON-LD code again with context,
   },
 
 
-
   "ref": "Q13912",
 
   "publisher": "Harper & Raw",
@@ -58,3 +57,14 @@ I wil write the JSON-LD code again with context,
   "usefulLinks": [ "https://en.wikipedia.org/wiki/Where_the_Wild_Things_Are" ]
 
 }
+
+
+Notes : 
+
+You can use both @id and @type (for the literal) for the context used
+in the JSON-LD context, the type can be either an url or whatever comes after this.
+
+:b0 -> this is a blank node. if you will draw this as a graph you
+will not find a issues or different values related to it or something
+@base -> is required to provide the base URL to the entities.
+
